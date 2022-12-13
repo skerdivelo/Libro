@@ -1,6 +1,7 @@
 class Mensola{
     private static final int MAX_NUM_VOLUMI=15;
     private Libro volumi[];
+
     public Mensola(){
         volumi=new Libro[MAX_NUM_VOLUMI];
     }
@@ -81,4 +82,13 @@ class Mensola{
         }
         return s;
     }
+
+    //metodo che inserisce libri da sinistra a destra
+    public void inserisciLibri(Libro[] libri){
+        for(int i = 0; i < libri.length; i++){
+            setVolume(libri[i], i);
+        }
+    }
+
+    
 }
