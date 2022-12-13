@@ -61,5 +61,24 @@ class Mensola{
         catch (ArrayIndexOutOfBoundsException exception) {
             return -1; // posizione non valida
         }
-    } 
+    }
+    public int getNumVolumi() {
+        int i=0;
+        while (volumi[i]!=null)
+            i++;
+        return i;
+    }
+    public double getPrezzoTotale() {
+        double prezzoTotale=0;
+        for (int i=0;i<getNumVolumi();i++)
+            prezzoTotale+=volumi[i].prezzo();
+        return prezzoTotale;
+    }
+    public String toString() {
+        String s="";
+        for (int i=0;i<getNumVolumi();i++){ 
+            s+=volumi[i].toString()+"\t"+volumi[i].prezzo()+"\t"+i+"\t"+getNumVolumi()+"\t"+getPrezzoTotale();
+        }
+        return s;
+    }
 }
